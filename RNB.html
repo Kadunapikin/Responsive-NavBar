@@ -10,7 +10,7 @@
 </head>
 <body>
     <header class="header">
-        <div class="navBar">
+        <nav class="navBar">
             <div class="logo"><a href="#">Kaduna Pikin</a></div>
             <ul class="links">
                 <li><a href="home" class="link">Home</a></li>
@@ -21,17 +21,9 @@
             <a href="#" class="action_btn">Get Started</a>
             <div class="toggle_btn">
                 <i class="fa-solid fa-bars"></i>
-            </div>    
-        </div>
-        <div class="dropdown_menu">
-            <li><a href="home" class="link">Home</a></li>
-            <li><a href="about" class="link">About</a></li>
-            <li><a href="service" class="link">Service</a></li>
-            <li><a href="contact" class="link">Contact</a></li>
-            <li><a href="#" class="dropdown_btn">Get Started</a></li>
-        </div>
+            </div>
+        </nav>
     </header>
-
     <main>
         <section class="id hero">
             <h1>Welcome</h1>
@@ -43,16 +35,19 @@
     </main>
     
     <script>
-        const toggleBtn = document.querySelector(".toggle_btn");
-        const toggleBtnIcon = document.querySelector(".toggle_btn i");
-        const dropDownMenu = document.querySelector(".dropdown_menu");
+    document.addEventListener("DOMContentLoaded", function() {
+    const toggleBtn = document.querySelector(".toggle_btn");
+    const links = document.querySelector(".links");
 
-        toggleBtn.onclick = function () {
-            dropDownMenu.classList.toggle('open');
-            // const isopen = dropDownMenu.classList.toggle('open');
-
-            // toggleBtnIcon.classList = isopen ? "fa-solid fa-xmark": "fa-solid fa-bars";
+    toggleBtn.addEventListener("click", function() {
+        // Check the current display style of the links
+        if (window.getComputedStyle(links).display === "none") {
+            links.style.display = "flex";
+        } else {
+            links.style.display = "none";
         }
+    });
+});
 
     </script>
 </body>

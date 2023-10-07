@@ -152,24 +152,47 @@ h1 {
     margin-bottom: 1rem;
 }
 
+.links {
+    display: flex;
+    gap: 2rem;
+}
+
 /* RESPONSIVENESS */
+/* The display of the links will be toggled via JavaScript */
+/* Hiding the links on mobile by default */
 @media (max-width: 992px) {
-    .links, .action_btn {
+    .links {
         display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 2rem;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
+        border-radius: 10px;
+        width: 200px;
     }
 
-    .toggle_btn {
-        display: block;
+    .links li {
+        padding: 0.7rem;
+        text-align: center;
     }
 
-    .dropdown_menu {
+    .action_btn, .toggle_btn {
         display: block;
     }
 }
 
 @media (max-width: 576px) {
-    .dropdown_menu {
-        left: 2rem;
-        width: unset;
+    .navBar {
+        padding: 1rem;
+    }
+
+    .links {
+        right: 1rem;
+    }
+
+    .toggle_btn {
+        margin-right: 2rem;
     }
 }
